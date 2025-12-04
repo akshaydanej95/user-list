@@ -106,7 +106,6 @@ npm run lint
 - **Lazy Loading**: User list component is lazy-loaded for better performance
 - **NgRx Pattern**: Complete state management with actions, effects, reducers, and selectors
 - **HTTP Interceptor**: Automatic Bearer token injection for all HTTP requests
-- **Pure Pipes**: Custom pipes for data transformation (e.g., fullName pipe)
 - **Modern Control Flow**: Uses Angular's new `@if`, `@for`, and `@defer` syntax
 - **Standalone Components**: No need for NgModules, cleaner architecture
 
