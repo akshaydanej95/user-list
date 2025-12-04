@@ -1,0 +1,87 @@
+<div class="user-list-container">
+  <h2>User List</h2>
+  
+  <!-- Filters Section -->
+  <div class="filters-section">
+    <h3>Filters</h3>
+    <div class="filter-group">
+      <label for="emailFilter">Filter by Email:</label>
+      <input 
+        id="emailFilter"
+        type="text" 
+        [(ngModel)]="emailFilter" 
+        (input)="filterChange()"
+        placeholder="Enter email to search..."
+        class="filter-input">
+    </div>
+    
+    <div class="filter-group">
+      <label for="statusFilter">Filter by Status:</label>
+      <select 
+        id="statusFilter"
+        [(ngModel)]="statusFilter" 
+        (change)="filterChange()"
+        class="filter-select">
+        <option [ngValue]="null">All Users</option>
+        <option [ngValue]="true">Active</option>
+        <option [ngValue]="false">Inactive</option>
+      </select>
+    </div>
+    
+    <button (click)="clearFilters()" class="clear-filters-btn">Clear Filters</button>
+  </div>
+
+  <!-- Loading State -->
+  @defer {
+    @if (loading$ | async) {
+      <div class="loading">
+        <p>Loading users...</p>
+      </div>
+    }
+
+    <!-- Error State -->
+    @if (error$ | async; as error) {
+      <div class="error">
+        <p>Error: {{ error }}</p>
+      </div>
+    }
+
+    <!-- Users Table -->
+    @if (!(loading$ | async) && !(error$ | async)) {
+      <div class="table-container">
+        <table class="users-table">
+          <thead>
+            <tr>
+              <th>Full Name</th>
+              <th>Email</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (user of users$ | async; track user.id) {
+              <tr class="user-row">
+                <td class="full-name">{{ user.firstName }} {{ user.lastName }}</td>
+                <td class="email">{{ user.email }}</td>
+                <td class="status">
+                  <span [class]="user.isActive ? 'status-active' : 'status-inactive'">
+                    {{ user.isActive ? 'Active' : 'Inactive' }}
+                  </span>
+                </td>
+              </tr>
+            }
+          </tbody>
+        </table>
+        
+        @if ((users$ | async)?.length === 0) {
+          <div class="no-users">
+            <p>No users found matching the current filters.</p>
+          </div>
+        }
+      </div>
+    }
+  } @placeholder {
+    <div class="loading">
+      <p>Loading users...</p>
+    </div>
+  }
+</div>

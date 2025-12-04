@@ -1,0 +1,173 @@
+.user-list-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.filters-section {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.filters-section h3 {
+  margin: 0 0 15px 0;
+  color: #495057;
+}
+
+.filter-group {
+  display: inline-block;
+  margin-right: 20px;
+  margin-bottom: 10px;
+}
+
+.filter-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #495057;
+}
+
+.filter-input,
+.filter-select {
+  padding: 8px 12px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 14px;
+  width: 200px;
+}
+
+.filter-input:focus,
+.filter-select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.clear-filters-btn {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+.clear-filters-btn:hover {
+  background-color: #5a6268;
+}
+
+.loading,
+.error {
+  text-align: center;
+  padding: 20px;
+}
+
+.loading p {
+  color: #007bff;
+  font-size: 16px;
+}
+
+.error p {
+  color: #dc3545;
+  font-size: 16px;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+.users-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.users-table th,
+.users-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.users-table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  color: #495057;
+}
+
+.user-row:hover {
+  background-color: #f8f9fa;
+}
+
+.full-name {
+  font-weight: 500;
+  color: #333;
+}
+
+.email {
+  color: #6c757d;
+}
+
+.status-active {
+  color: #28a745;
+  font-weight: 500;
+}
+
+.status-inactive {
+  color: #dc3545;
+  font-weight: 500;
+}
+
+.no-users {
+  text-align: center;
+  padding: 40px;
+  color: #6c757d;
+}
+
+.no-users p {
+  font-size: 16px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .user-list-container {
+    padding: 10px;
+  }
+  
+  .filter-group {
+    display: block;
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+  
+  .filter-input,
+  .filter-select {
+    width: 100%;
+  }
+  
+  .clear-filters-btn {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+  
+  .users-table {
+    font-size: 14px;
+  }
+  
+  .users-table th,
+  .users-table td {
+    padding: 8px 12px;
+  }
+}
