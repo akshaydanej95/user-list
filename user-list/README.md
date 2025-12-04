@@ -1,59 +1,121 @@
-# UserList
+# User List Management System
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.0.
+A modern Angular application for managing and filtering user data with real-time search capabilities and professional UI design.
 
-## Development server
+## 🚀 Features
 
-To start a local development server, run:
+- **User List Display**: View users in a clean, responsive table format showing Full Name (LastName, FirstName), Email, and Status
+- **Real-time Filtering**: 
+  - Filter by email with instant search
+  - Filter by status (Active/Inactive) using dropdown
+  - Clear all filters with one click
+- **State Management**: Built with NgRx for predictable state management
+- **HTTP Simulation**: Mock API calls with 2-second delay to simulate real server responses
+- **Authentication**: HTTP interceptor automatically adds Bearer token to all requests
+- **Modern Angular**: Uses latest Angular features including:
+  - Standalone components
+  - New control flow syntax (`@if`, `@for`, `@defer`)
+  - Zoneless change detection
+  - Custom pipes for data transformation
+- **Responsive Design**: Mobile-friendly interface with professional styling
+- **Loading States**: Shows loading indicators during data fetch
+- **Error Handling**: Comprehensive error handling with user-friendly messages
 
-```bash
-ng serve
+## 🛠 Tech Stack
+
+- **Angular 20.1.0** - Frontend framework
+- **NgRx** - State management (Store, Effects, Selectors)
+- **RxJS** - Reactive programming
+- **TypeScript** - Type-safe development
+- **Standalone Components** - Modern Angular architecture
+- **CSS3** - Custom styling with responsive design
+
+## 📦 Installation & Setup
+
+### Prerequisites
+- Node.js (v18 or higher)
+- npm (v9 or higher)
+- Angular CLI
+
+### Installation Steps
+
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd user-list
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server**
+   ```bash
+   npm start
+   # or
+   ng serve
+   ```
+
+4. **Open the application**
+   Navigate to `http://localhost:4200/` in your browser
+
+## 🎯 How to Use
+
+1. **View Users**: The application loads user data automatically with a 2-second delay
+2. **Filter by Email**: Type in the email filter box to search users by email address
+3. **Filter by Status**: Use the dropdown to show only Active or Inactive users
+4. **Clear Filters**: Click "Clear Filters" to reset all filters and show all users
+5. **Responsive**: The table adapts to different screen sizes for optimal mobile experience
+
+## 📁 Project Structure
+
+```
+src/
+├── app/
+│   ├── features/
+│   │   └── user-list/          # Lazy-loaded user list component
+│   ├── models/                 # TypeScript interfaces
+│   ├── services/               # HTTP services
+│   ├── store/                  # NgRx store (actions, effects, reducers, selectors)
+│   ├── interceptors/           # HTTP interceptors
+│   └── pipes/                  # Custom pipes
+├── assets/                     # Static assets
+└── public/
+    └── mock-users.json         # Mock user data
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 🔧 Available Scripts
 
 ```bash
-ng generate component component-name
+# Start development server
+npm start
+
+# Build for production
+npm run build
+
+# Run unit tests
+npm test
+
+# Run linting
+npm run lint
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 🏗 Architecture
 
-```bash
-ng generate --help
-```
+- **Lazy Loading**: User list component is lazy-loaded for better performance
+- **NgRx Pattern**: Complete state management with actions, effects, reducers, and selectors
+- **HTTP Interceptor**: Automatic Bearer token injection for all HTTP requests
+- **Pure Pipes**: Custom pipes for data transformation (e.g., fullName pipe)
+- **Modern Control Flow**: Uses Angular's new `@if`, `@for`, and `@defer` syntax
+- **Standalone Components**: No need for NgModules, cleaner architecture
 
-## Building
+## 🎨 UI/UX Features
 
-To build the project run:
+- Clean, professional design with hover effects
+- Color-coded status indicators (green for active, red for inactive)
+- Responsive table that works on all screen sizes
+- Loading states with smooth transitions
+- Intuitive filter controls with instant feedback
 
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Built with ❤️ using Angular and modern web technologies.
